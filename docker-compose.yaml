@@ -1,0 +1,16 @@
+version: '3'
+services:
+  robot-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: robot-runner
+    image: robot-runner
+    entrypoint: sh /robot-tests-volume/src/robot-tests-run-script.sh
+    ports:
+      - "443:443"
+    volumes:
+      - ./:/robot-tests-volume/src
+      - ./output:/output
+    environment:
+      TEST_PATH: robot-tests
