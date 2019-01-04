@@ -32,6 +32,31 @@ Open URL in Chrome Browser
     Set Selenium Speed   1 seconds
     Title Should Be     Filling Out Forms - Ultimate QA
 
+User fills form 1
+    Input User Name on Form     ${NAME_FIELD}     Some name for left form
+    Input Message on Form  ${TEXT_FIELD}   Some text for left form
+    Capture Page Screenshot
+
+User submits forms 1
+    Click Button  ${SUBMIT_BUTTON}
+
+Form 1 was submitted successfully
+    Wait Until Page Contains    Form filled out successfully
+    Capture Page Screenshot
+
+User fills form 2
+    Input User Name on Form  ${NAME_FIELD2}    And some name for the right form
+    Input Message on Form  ${TEXT_FIELD2}   Also some text for the right form
+    Pass Captcha
+    Capture Page Screenshot
+
+User submits forms 2
+    Click Button  ${SUBMIT_BUTTON2}
+
+Form 2 was submitted successfully
+    Wait Until Page Contains    Success
+    Capture Page Screenshot
+
 Input User Name on Form
     [Arguments]    ${NAME_FIELD}    ${NAME}
     Input Text  ${NAME_FIELD}   ${NAME}

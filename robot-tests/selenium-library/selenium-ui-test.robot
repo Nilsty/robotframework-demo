@@ -13,19 +13,11 @@ Test Teardown   Close Browser
 
 *** Test Cases ***
 User Should Fill The Form 1 Successfully
-    Input User Name on Form     ${NAME_FIELD}     Some name for left form
-    Input Message on Form  ${TEXT_FIELD}   Some text for left form
-    Capture Page Screenshot
-    Click Button  ${SUBMIT_BUTTON}
-    Wait Until Page Contains    Form filled out successfully
-    Capture Page Screenshot
-
+    GIVEN User fills form 1
+    WHEN User submits forms 1
+    THEN Form 1 was submitted successfully
 
 User Should Fill The Form 2 Successfully
-    Input User Name on Form  ${NAME_FIELD2}    And some name for the right form
-    Input Message on Form  ${TEXT_FIELD2}   Also some text for the right form
-    Pass Captcha
-    Capture Page Screenshot
-    Click Button  ${SUBMIT_BUTTON2}
-    Wait Until Page Contains    Success
-    Capture Page Screenshot
+    GIVEN User fills form 2
+    WHEN User submits forms 2
+    THEN Form 2 was submitted successfully
