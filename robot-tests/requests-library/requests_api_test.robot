@@ -1,10 +1,10 @@
 *** Settings ***
-Documentation  Test to verify that API response meet the expectations when a user
+Documentation  Example of an API test using the Requests Library
 ...            call the API.
-...            As a Note : At first, I put all three steps into a 1 Test Cases then I
-...            seperate it because of response time is not less than 400ms so this cause a
-...            failure for that case. So, I seperated 3 small test cases to get Pass result for
-...            other cases.
+...            The first test case valides the response code.
+...            The second test case valides the respons time.
+...            The third test cases iterates over a json response
+...            to filter by a partial string match.
 
 Resource  Resources/Keywords.robot
 
@@ -18,4 +18,4 @@ Response Time Check For API
     Response Time Should Be Less Than 400ms
 
 Retrieve JSON data
-    Iteration Should Print Group Companies
+    Print company names matching 'Group'

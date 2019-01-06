@@ -5,7 +5,6 @@ Documentation  Example test suite using the SeleniumLibrary of the
 ...            different form and solving a capture.
 
 Library   SeleniumLibrary
-Resource  Resources/Variables.robot
 Resource  Resources/Keywords.robot
 
 Test Setup      Init
