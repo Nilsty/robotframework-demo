@@ -18,5 +18,6 @@ RUN apt-get install -yqq xvfb
 ENV DISPLAY=:99
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 
+RUN apt-get install -yqq python-pip
 COPY requirments.txt requirments.txt
-RUN pip install -r requirments.txt
+RUN python2 -m pip install -r requirments.txt
