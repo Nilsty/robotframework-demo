@@ -6,6 +6,9 @@ rm -f output/rerun.xml
 rm -f output/first_run_log.html
 rm -f output/second_run_log.html
 
+# ignore urllib3/connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request
+export PYTHONWARNINGS="ignore:Unverified HTTPS request"
+
 echo
 echo "#######################################"
 echo "# Running test suite a first time     #"
@@ -15,6 +18,8 @@ if xvfb-run --server-args="-screen 0 1920x1080x24" \
       robot --outputdir=./output ${TEST_PATH}; then
   # we stop the script here if all the tests were OK
 	echo "we don't run the tests again as everything was OK on first try"
+  echo "Creating keyword documentation"
+  python -m robot.testdoc robot-tests output/keywords.html
 	exit 0
 fi
 # otherwise we go for another round with the failing tests
@@ -31,6 +36,8 @@ if xvfb-run --server-args="-screen 0 1920x1080x24" \
       robot --rerunfailed output/output.xml \
             --outputdir=./output --output rerun ${TEST_PATH}; then
   echo "Tests passed on second try"
+  echo "Creating keyword documentation"
+  python -m robot.testdoc robot-tests output/keywords.html
 else
   echo "Test failed on second try."
   fail="2"

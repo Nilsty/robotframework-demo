@@ -1,6 +1,5 @@
-chromedriver-installer==0.0.6
-robotframework==3.1
-robotframework-seleniumlibrary==3.3.0
+chromedriver-binary==75.0.3770.8.0
+robotframework==3.1.1
+robotframework-seleniumlibrary==3.3.1
 selenium==3.141.0
 robotframework-requests==0.5.0
-robotframework-mqttlibrary==0.5.0

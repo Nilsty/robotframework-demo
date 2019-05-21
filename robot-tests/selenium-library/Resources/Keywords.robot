@@ -29,7 +29,7 @@ Set Chrome Options
 Open URL in Chrome Browser
     Open Browser    ${LOGIN URL}    ${BROWSER}
     Maximize Browser Window
-    Set Selenium Speed   1 seconds
+    Set Selenium Speed   0.5 seconds
     Title Should Be     Filling Out Forms - Ultimate QA
 
 User fills form 1
