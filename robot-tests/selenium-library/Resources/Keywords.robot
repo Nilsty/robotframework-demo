@@ -1,6 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
 Resource  Variables.robot
+Library   ../../custom_keywords.py
 
 *** Keywords ***
 Init
@@ -54,8 +55,12 @@ User submits forms 2
     Click Button  ${SUBMIT_BUTTON2}
 
 Form 2 was submitted successfully
-    Wait Until Page Contains    Success
+    Wait Until Page Contains    Success1
     Capture Page Screenshot
+    ${RESULT}=  Make Some Calculation   10  15
+    Log To Console  ${RESULT}
+    ${RESULT}=  Give Me Some Output
+    Log To Console  ${RESULT}
 
 Input User Name on Form
     [Arguments]    ${NAME_FIELD}    ${NAME}

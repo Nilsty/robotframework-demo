@@ -3,7 +3,7 @@
 ${LOGIN URL}                    https://www.ultimateqa.com/filling-out-forms/
 ${BROWSER}                      Chrome
 @{chrome_arguments}             --disable-infobars    --headless    --disable-gpu   --no-sandbox   --window-size=1920,1080
-${HEADLESS_BROWSER_ENABLED}     True
+${HEADLESS_BROWSER_ENABLED}     False
 
 # SELECTORS
 ${NAME_FIELD}       css=[name='et_pb_contact_name_0']
