@@ -15,7 +15,7 @@ To run the test suite locally the following needs to be installed:
   - selenium
   - robotframework-requests
 
-More details can be found in the [Dockerfile](../blob/master/Dockerfile)
+More details can be found in the [Dockerfile](../master/Dockerfile)
 
 After installing all requirements the test suite can be executed with:
 `robot --outputdir=./output-local --variable HEADLESS_BROWSER_ENABLED:False robot-tests`
