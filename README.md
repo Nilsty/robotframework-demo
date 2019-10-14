@@ -20,6 +20,8 @@ More details can be found in the [Dockerfile](../master/Dockerfile)
 After installing all requirements the test suite can be executed with:
 `robot --outputdir=./output-local --variable HEADLESS_BROWSER_ENABLED:False robot-tests`
 
+![Test executed](../master/test_executed.png)
+
 ## Test report
 After the tests have been run the test report can be accessed from the output folder. e.g. output/report.html
 

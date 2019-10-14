@@ -55,7 +55,7 @@ User submits forms 2
     Click Button  ${SUBMIT_BUTTON2}
 
 Form 2 was submitted successfully
-    Wait Until Page Contains    Success1
+    Wait Until Page Contains    Success
     Capture Page Screenshot
     ${RESULT}=  Make Some Calculation   10  15
     Log To Console  ${RESULT}
