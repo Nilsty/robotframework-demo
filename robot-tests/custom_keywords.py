@@ -8,4 +8,4 @@ def give_me_some_output():
     """
         return a cool message
     """
-    return "Welcome to Ministry of Testing meetup @Humanitec"
+    return "Hallo Robotframework Community!"

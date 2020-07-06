@@ -1,16 +1,10 @@
 version: '3'
 services:
   robot-runner:
-    build:
-      context: .
-      dockerfile: Dockerfile
     container_name: robot-runner
-    image: robot-runner
-    entrypoint: sh /robot-tests-volume/src/robot-tests-run-script.sh
-    ports:
-      - "443:443"
+    image: ppodgorsek/robot-framework:latest
     volumes:
-      - ./:/robot-tests-volume/src
-      - ./output:/output
+      - ./robot-tests:/opt/robotframework/tests
+      - ./output-local:/opt/robotframework/reports
     environment:
-      TEST_PATH: robot-tests
+      PYTHONWARNINGS: "ignore:Unverified HTTPS request"
