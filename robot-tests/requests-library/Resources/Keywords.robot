@@ -17,6 +17,7 @@ Response Time Should Be Less Than 400ms
 
 Print company names matching 'Group'
     ${JSON}=    Set Variable    ${resp.json()}
-    :FOR    ${ELEMENT}    IN    @{JSON}
-        \    ${COMPANY}=    Set Variable     ${ELEMENT["company"]["name"]}
-        \    Run Keyword If     "Group" in $COMPANY   log  ${COMPANY}
+    FOR    ${ELEMENT}    IN    @{JSON}
+        ${COMPANY}=    Set Variable     ${ELEMENT["company"]["name"]}
+        Run Keyword If     "Group" in $COMPANY   log  ${COMPANY}
+    END

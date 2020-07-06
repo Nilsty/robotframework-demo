@@ -23,8 +23,9 @@ Start Headless Browser
 Set Chrome Options
     [Documentation]    Set Chrome options for headless mode
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    : FOR    ${option}    IN    @{chrome_arguments}
-    \    Call Method    ${options}    add_argument    ${option}
+    FOR    ${option}    IN    @{chrome_arguments}
+        Call Method    ${options}    add_argument    ${option}
+    END
     [Return]    ${options}
 
 Open URL in Chrome Browser
@@ -42,7 +43,7 @@ User submits forms 1
     Click Button  ${SUBMIT_BUTTON}
 
 Form 1 was submitted successfully
-    Wait Until Page Contains    Form filled out successfully
+    Wait Until Page Contains    Please refresh the page and try again.
     Capture Page Screenshot
 
 User fills form 2
