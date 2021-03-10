@@ -19,5 +19,5 @@ Print company names matching 'Group'
     ${JSON}=    Set Variable    ${resp.json()}
     FOR    ${ELEMENT}    IN    @{JSON}
         ${COMPANY}=    Set Variable     ${ELEMENT["company"]["name"]}
-        Run Keyword If     "Group" in $COMPANY   log  ${COMPANY}
+        Run Keyword If     "Group" in "${COMPANY}"   log  ${COMPANY}  console=True
     END
